@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>temporal-clone conformance harness</title>
+  </head>
+  <body>
+    <!-- One page per source (R0.10): ?source=S1..S4 loads exactly one bundle into this realm. -->
+    <script type="module">
+      const source = new URLSearchParams(location.search).get('source') ?? '';
+      if (!/^S[1-4]$/.test(source)) throw new Error('expected ?source=S1, S2, S3 or S4');
+      await import(`../../dist/browser/${source}.js`);
+    </script>
+  </body>
+</html>

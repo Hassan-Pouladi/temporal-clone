@@ -9,7 +9,7 @@
     "node": ">=22.12"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.browser.json && tsc --noEmit -p tsconfig.worker.json",
     "lint": "eslint . --max-warnings 0 && prettier --check .",
     "test": "vitest run",
     "test:browser": "npm run build:conformance && playwright test",

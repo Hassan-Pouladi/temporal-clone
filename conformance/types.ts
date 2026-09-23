@@ -99,6 +99,23 @@ export interface SourceReport {
   readonly cells: readonly ResultCell[];
 }
 
+/** Builds a complete per-engine record without type assertions. */
+export function mapEngines<T>(fn: (engine: Engine) => T): Record<Engine, T> {
+  return {
+    node22: fn('node22'),
+    node24: fn('node24'),
+    node26: fn('node26'),
+    chromium: fn('chromium'),
+    firefox: fn('firefox'),
+    webkit: fn('webkit'),
+  };
+}
+
+/** Builds a complete per-source record without type assertions. */
+export function mapSources<T>(fn: (source: SourceId) => T): Record<SourceId, T> {
+  return { S1: fn('S1'), S2: fn('S2'), S3: fn('S3'), S4: fn('S4') };
+}
+
 export function isTemporalTypeName(value: unknown): value is TemporalTypeName {
   return typeof value === 'string' && (TEMPORAL_TYPE_NAMES as readonly string[]).includes(value);
 }

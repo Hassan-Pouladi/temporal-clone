@@ -8,6 +8,7 @@ import {
   SOURCE_IDS,
   compareCells,
   isTemporalTypeName,
+  mapSources,
   type BoundaryId,
   type Cell,
   type Detail,
@@ -118,7 +119,7 @@ export function readEngineResult(value: unknown, where = 'engine result'): Engin
     engine,
     engineVersion,
     runAt,
-    sources: { S1: readInfo('S1'), S2: readInfo('S2'), S3: readInfo('S3'), S4: readInfo('S4') },
+    sources: mapSources(readInfo),
     cells: cells.map((cell: unknown, i) => readResultCell(cell, `${where}.cells[${String(i)}]`)),
   };
 }
@@ -135,17 +136,12 @@ export function buildEngineResult(
     if (report === undefined) throw new SchemaError(engine, `no report for ${id}`);
     return report;
   };
-  const bySource = { S1: find('S1'), S2: find('S2'), S3: find('S3'), S4: find('S4') };
+  const bySource = mapSources(find);
   return {
     engine,
     engineVersion,
     runAt,
-    sources: {
-      S1: bySource.S1.info,
-      S2: bySource.S2.info,
-      S3: bySource.S3.info,
-      S4: bySource.S4.info,
-    },
+    sources: mapSources((id) => bySource[id].info),
     cells: SOURCE_IDS.flatMap((id) => bySource[id].cells).sort(compareCells),
   };
 }

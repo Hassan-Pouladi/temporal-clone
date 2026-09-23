@@ -103,6 +103,27 @@ export async function runSource(
   return { source: source.id, info: source.info, cells: cells.sort(compareCells) };
 }
 
+/**
+ * The report for a realm that failed as a whole (process crash, page that never loaded):
+ * every cell it should have produced is a harness error, so nothing silently disappears.
+ */
+export function failedReport(
+  id: SourceId,
+  error: unknown,
+  boundaries: readonly BoundaryId[],
+  types: readonly TemporalTypeName[] = TEMPORAL_TYPE_NAMES,
+): SourceReport {
+  const cells: ResultCell[] = boundaries.flatMap((boundary) =>
+    types.map((type) => ({
+      source: id,
+      boundary,
+      type,
+      ...classify({ kind: 'harness-error', error }, { type, str: '' }),
+    })),
+  );
+  return { source: id, info: { available: false }, cells: cells.sort(compareCells) };
+}
+
 async function runOne(
   source: LoadedSource,
   boundary: Boundary,
