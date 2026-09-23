@@ -1,0 +1,1705 @@
+{
+  "engine": "node22",
+  "engineVersion": "v22.23.2",
+  "runAt": "2026-09-23T21:20:13.578Z",
+  "sources": {
+    "S1": {
+      "available": false
+    },
+    "S2": {
+      "available": true,
+      "version": "1.0.5",
+      "resolvedToNative": false
+    },
+    "S3": {
+      "available": true,
+      "version": "1.0.5"
+    },
+    "S4": {
+      "available": true,
+      "version": "0.5.1"
+    }
+  },
+  "cells": [
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "Instant",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "ZonedDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "PlainDate",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "PlainTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "PlainDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "PlainYearMonth",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "PlainMonthDay",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B1",
+      "type": "Duration",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "Instant",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "ZonedDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "PlainDate",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "PlainTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "PlainDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "PlainYearMonth",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "PlainMonthDay",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B2",
+      "type": "Duration",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "Instant",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "ZonedDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "PlainDate",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "PlainTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "PlainDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "PlainYearMonth",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "PlainMonthDay",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B3",
+      "type": "Duration",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "Instant",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "ZonedDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "PlainDate",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "PlainTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "PlainDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "PlainYearMonth",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "PlainMonthDay",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B4",
+      "type": "Duration",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "Instant",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "ZonedDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "PlainDate",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "PlainTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "PlainDateTime",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "PlainYearMonth",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "PlainMonthDay",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S1",
+      "boundary": "B8",
+      "type": "Duration",
+      "outcome": "unavailable",
+      "detail": {
+        "reason": "globalThis.Temporal is undefined"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B1",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B2",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B3",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B4",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S2",
+      "boundary": "B8",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B1",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B2",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B3",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B4",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S3",
+      "boundary": "B8",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B1",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B2",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B3",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B4",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "Instant",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "ZonedDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "PlainDate",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "PlainTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "PlainDateTime",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "PlainYearMonth",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "PlainMonthDay",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    },
+    {
+      "source": "S4",
+      "boundary": "B8",
+      "type": "Duration",
+      "outcome": "silent-loss",
+      "detail": {
+        "receivedTag": "[object Object]",
+        "ownKeyCount": 0,
+        "shape": "{}"
+      }
+    }
+  ]
+}
