@@ -1,0 +1,137 @@
+name: Conformance
+
+# R0.21: weekly canary. Measures what each engine does with Temporal values at every
+# structured-clone boundary and compares it with conformance/baseline.json.
+
+on:
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+  push:
+    branches: ['phase-*']
+
+permissions:
+  contents: read
+
+jobs:
+  node:
+    name: node${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24', '26']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install npm 12.0.2
+        run: npm install --global npm@12.0.2
+      - name: Check toolchain
+        run: |
+          node --version
+          npm --version
+          test "$(npm --version)" = "12.0.2"
+          node -e "const [a,b,c]=process.versions.node.split('.').map(Number); if (a===22 && (b<22 || (b===22 && c<2))) { console.error('Node 22 must be >=22.22.2 (D-002)'); process.exit(1); }"
+      - run: npm ci
+      - run: npm run build:conformance
+      - name: Run the Node matrix
+        run: node conformance/dist/node/run-node.js
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: results-node${{ matrix.node }}
+          path: conformance/results/node${{ matrix.node }}.json
+          if-no-files-found: error
+
+  browser:
+    name: ${{ matrix.browser }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+      - name: Install npm 12.0.2
+        run: npm install --global npm@12.0.2
+      - run: npm ci
+      # The canary tracks new browser releases; pushes use the pinned version.
+      - name: Use the latest Playwright (not committed)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: npm install --no-save @playwright/test@latest
+      - name: Install ${{ matrix.browser }}
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - run: npm run build:conformance
+      - name: Run the browser matrix
+        run: node conformance/dist/node/run-browsers.js ${{ matrix.browser }}
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: results-${{ matrix.browser }}
+          path: conformance/results/${{ matrix.browser }}.json
+          if-no-files-found: error
+
+  check:
+    name: Compare with baseline
+    needs: [node, browser]
+    # Runs even if an engine job failed: a missing result file is itself a difference.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+      - name: Install npm 12.0.2
+        run: npm install --global npm@12.0.2
+      - run: npm ci
+      - name: Collect the six result files
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: results-*
+          path: conformance/results
+          merge-multiple: true
+      - run: ls -l conformance/results
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: conformance-results
+          path: conformance/results/*.json
+          if-no-files-found: error
+      - name: Look for the baseline
+        id: baseline
+        run: |
+          if [ -f conformance/baseline.json ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::conformance/baseline.json does not exist yet (bootstrap): results collected, check skipped."
+          fi
+      - name: Check (push)
+        if: steps.baseline.outputs.exists == 'true' && github.event_name == 'push'
+        run: npm run conformance:check
+      - name: Check and report (canary)
+        if: steps.baseline.outputs.exists == 'true' && github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if npm run conformance:check; then
+            exit 0
+          fi
+          engines="$(cat conformance/results/tmp/changed-engines.txt)"
+          gh issue create \
+            --title "Conformance change detected: ${engines}" \
+            --body-file conformance/results/tmp/diff.md
+          exit 1

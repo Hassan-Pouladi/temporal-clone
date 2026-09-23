@@ -120,3 +120,56 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Alternatives considered: the owner runs the commands.
 - Consequences: section 7 applies unchanged from here on.
 - Owner approval: approved 2026-09-23
+
+### D-014: CI pins npm 12.0.2 until npm 12.1.0 is 3 days old
+
+- Date / phase: 2026-09-23 / 0
+- Context: D-002 pins `npm@12.1.0` in CI. npm 12.1.0 was published 2026-09-22T17:11Z, so under the repository's `.npmrc` (`min-release-age=3`, D-010) it resolves to `ETARGET` until 2026-09-25T17:11Z. Evidence: `npm pack --dry-run npm@12.1.0` in the repository fails with "No matching version found for npm@12.1.0 with a date before 20/09/2026"; the same command with `--min-release-age=0` succeeds. The bundled npm on the Node 24 and 26 runners honors `min-release-age`, so the global install would fail there.
+- Decision: apply D-010's fallback: CI installs the previous version, `npm@12.0.2` (same engine range `^22.22.2 || ^24.15.0 || >=26.0.0`, same `approve-scripts` and `install-scripts` commands, verified from its published file list). Local development uses npm 12.1.0.
+- Alternatives considered: running the global install outside the repository so `.npmrc` is not read (rejected: it sidesteps the setting); waiting until 2026-09-25 before the first push.
+- Consequences: CI and local npm differ by one minor version for about two days. Bumping CI to 12.1.0 after 2026-09-25T17:11Z is a one-line change in both workflows.
+- Owner approval: pending
+
+### D-015: B8 deserialization failure is `async-error`
+
+- Date / phase: 2026-09-23 / 0
+- Context: R0.13 defines `throws` as "the send or put threw synchronously" and `async-error` as receiving-side failures (`messageerror`, IndexedDB errors). B8 is two synchronous calls.
+- Decision: `v8.serialize` throwing is the send (`throws`); `v8.deserialize` throwing is the receiving side, the analogue of `messageerror` (`async-error`).
+- Alternatives considered: `throws` for both.
+- Consequences: none observed so far; every B8 failure seen is in `serialize`.
+- Owner approval: pending
+
+### D-016: the canary fails its run after opening an issue
+
+- Date / phase: 2026-09-23 / 0
+- Context: R0.21 says a difference on `schedule` / `workflow_dispatch` opens an issue; it does not say whether the run also fails.
+- Decision: the check job opens the issue and then exits 1, so the run is also red in the Actions tab (louder failure).
+- Alternatives considered: open the issue and pass.
+- Consequences: each weekly run with a known, not-yet-baselined change is red and opens another issue until the baseline is updated.
+- Owner approval: pending
+
+### D-017: esbuild's `postinstall` is denied
+
+- Date / phase: 2026-09-23 / 0
+- Context: R0.4: approve install scripts only for packages that demonstrably fail without them.
+- Decision: `esbuild@0.28.2` (`postinstall: node install.js`) is recorded as `false` in `allowScripts` (`npm install-scripts deny esbuild`). Evidence: with the script blocked, `npx esbuild --version` prints `0.28.2` and a `transform` call works, because the binary comes from the `@esbuild/<platform>` optional dependency. CI builds the harness with esbuild on Linux, which confirms it there. No other package has an install script (`npm install-scripts ls`: "No packages with unreviewed install scripts").
+- Alternatives considered: leaving esbuild unreviewed (npm warns on every install).
+- Consequences: no dependency runs code at install time.
+- Owner approval: pending
+
+### D-018: harness details the spec does not fix
+
+- Date / phase: 2026-09-23 / 0
+- Context: R0.13 to R0.15 leave some mechanics open.
+- Decision:
+  - `ownKeyCount` is `Reflect.ownKeys(value).length` (all own keys, including symbols and non-enumerable ones); `-1` if the keys cannot be listed (revoked Proxy); `0` for primitives.
+  - `shape` falls back to `typeof value` when `JSON.stringify` returns `undefined`, and to `<unserializable: ErrorName>` when it throws. `receivedTag` is `<tag threw: ErrorName>` when `Object.prototype.toString` throws.
+  - A thrown non-object gets `errorName` = its `typeof`; an object without a string `name` gets `unknown`. `messageerror` events are reported with `errorName` `messageerror`.
+  - A cleanup that throws or does not finish within 5,000 ms turns the cell into `harness-error` (a leaked worker, port or database could contaminate later cells).
+  - A realm that fails as a whole (crashed process, page that never loads) reports every one of its cells as `harness-error`, so no cell silently disappears.
+  - Async boundaries ignore messages whose `expected` does not match the current cell (stragglers from an earlier timed-out cell).
+  - `MATRIX.md` shows `MISSING` for a cell absent from a result file; this cannot happen with the runners in this repository.
+  - `skipLibCheck` is on: `tinybench` (a Vitest dependency) references `DOMHighResTimeStamp`, which does not exist in the Node-only lib set.
+- Alternatives considered: none material.
+- Consequences: all covered by unit tests in `test/unit/conformance/`.
+- Owner approval: pending
