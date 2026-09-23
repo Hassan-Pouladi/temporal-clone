@@ -1,0 +1,14 @@
+# Owner-provided specification: read-only for the implementing agent.
+CLAUDE.md
+START-HERE.md
+docs/spec/
+
+# Generated.
+package-lock.json
+conformance/dist/
+conformance/results/
+conformance/baseline.json
+conformance/MATRIX.md
+coverage/
+playwright-report/
+test-results/

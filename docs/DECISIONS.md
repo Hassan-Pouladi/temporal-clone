@@ -5,6 +5,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 <!-- entries below, newest last -->
 
 ### D-001: Playwright browsers use the default browser cache
+
 - Date / phase: 2026-09-23 / 0
 - Context: R0.4 installs browsers with `npx playwright install`, which writes outside the repository and conflicts with `CLAUDE.md` section 6 rule 10.
 - Decision: explicit, narrow exception to rule 10. Playwright may use its default browser cache (`%LOCALAPPDATA%\ms-playwright` locally, the runner's cache in CI). Nothing else outside the repository. Locally: `npx playwright install chromium firefox webkit` (no `--with-deps`). CI keeps `--with-deps`.
@@ -13,6 +14,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-002: CI installs npm 12.1.0 in every job
+
 - Date / phase: 2026-09-23 / 0
 - Context: the Node 22 and 24 runner images ship an older npm that ignores `allowScripts` and `min-release-age`.
 - Decision: every CI job installs `npm@12.1.0` (pinned, never `@latest`) immediately after `actions/setup-node`. The Node 22 line must resolve to `>=22.22.2` (npm 12's engine range).
@@ -21,6 +23,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-003: HY3 accepts any error name for B8
+
 - Date / phase: 2026-09-23 / 0
 - Context: R0.19 HY3 says B8 (`v8.serialize`) "may report a different error name; record it" without saying whether that passes.
 - Decision: a B8 cell satisfies HY3 if its outcome is `throws`, with any `errorName`. The matrix shows the name.
@@ -29,6 +32,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-004: S1 has no `version` in result files
+
 - Date / phase: 2026-09-23 / 0
 - Context: R0.16 gives every source an optional `version`; native Temporal has no package version.
 - Decision: omit `version` for S1. `engineVersion` identifies the implementation. S2 to S4 record their package version.
@@ -37,6 +41,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-005: scripts `build:conformance` and `conformance:baseline`
+
 - Date / phase: 2026-09-23 / 0
 - Context: `CLAUDE.md` section 8 lists required scripts; the harness also needs a bundle step and an explicit way to write the baseline.
 - Decision: add `build:conformance` (esbuild bundles into `conformance/dist/`) and `conformance:baseline` (writes `conformance/baseline.json` from the committed results). `conformance` runs `build:conformance` first. `conformance:baseline` exits 1 when the `CI` environment variable is set, so the canary can never rewrite the baseline.
@@ -45,6 +50,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-006: no baseline while any hypothesis fails
+
 - Date / phase: 2026-09-23 / 0
 - Context: section 0.7 says to stop when a hypothesis fails but does not say whether the baseline is created first.
 - Decision: if any hypothesis fails, commit `conformance/results/*.json` and `MATRIX.md`, do NOT create `baseline.json`, then stop and report.
@@ -53,6 +59,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-007: `ci.yml` browser job runs on Node 22
+
 - Date / phase: 2026-09-23 / 0
 - Context: R0.20 gives a Node matrix for Node jobs but no Node version for the browser job.
 - Decision: the browser job runs on Node 22, the lowest supported line.
@@ -61,6 +68,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-008: `scripts/serve.mjs` is type-checked and linted through `checkJs`
+
 - Date / phase: 2026-09-23 / 0
 - Context: `serve.mjs` is plain JavaScript; `npm run typecheck` and `npm run lint` must cover it.
 - Decision: a tsconfig with `allowJs` and `checkJs` includes `scripts/`; ESLint type-checked rules apply to it.
@@ -69,6 +77,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-009: every npm script is cross-platform
+
 - Date / phase: 2026-09-23 / 0
 - Context: development happens on Windows, CI on Linux.
 - Decision: no shell-prefix environment variables (`TZ=UTC cmd`), no `rm -rf`, no bash-only syntax in npm scripts. Environment variables are set in config files or small Node scripts. Phase 1's `TZ=UTC` requirement is met by setting `process.env.TZ` in the Vitest config or global setup.
@@ -77,6 +86,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-010: `min-release-age=3` wins over "latest patch"
+
 - Date / phase: 2026-09-23 / 0
 - Context: `00-OVERVIEW.md` section 9 asks for the latest patch of each major; `.npmrc` `min-release-age=3` refuses versions younger than 3 days.
 - Decision: pin the newest version that is at least 3 days old. If an exact pin fails with `ETARGET`, drop to the previous patch. Never remove the setting.
@@ -85,6 +95,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-011: permitted `gh` commands
+
 - Date / phase: 2026-09-23 / 0
 - Context: the agent needs CI evidence (R0.21, X0.2, X0.5).
 - Decision: the agent may use `gh run list`, `gh run view`, `gh run watch`, `gh run download` and `gh repo view` only. Never `gh auth`, never read tokens, never create issues, PRs, releases or secrets. The canary workflow opening issues from CI is fine.
@@ -93,6 +104,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-012: committed conformance results come only from Linux CI
+
 - Date / phase: 2026-09-23 / 0
 - Context: R0.21 allows committing CI artifacts for engines that cannot run locally; the local machine is Windows, the canary runs on Linux.
 - Decision: all six committed `conformance/results/*.json` come from the Linux CI artifacts of the `phase-0` push. Local Windows runs are for development only and are never committed.
@@ -101,6 +113,7 @@ Decision log for `temporal-clone`. The implementing agent appends an entry whene
 - Owner approval: approved 2026-09-23
 
 ### D-013: agent created the initial `main` commit
+
 - Date / phase: 2026-09-23 / 0
 - Context: the owner setup (START-HERE steps 1 to 5) was not complete: the GitHub repository was empty. `CLAUDE.md` section 7 forbids the agent from committing to or pushing `main`.
 - Decision: one-time exception, authorized by the owner in chat: the agent copied the specification pack plus `.gitattributes` (`* text=auto eol=lf`) into `D:\dev\temporal-clone`, committed `chore: add specification` (139fc85) on `main` and pushed it. All further work is on `phase-0`.

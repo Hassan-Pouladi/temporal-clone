@@ -1,0 +1,39 @@
+{
+  "name": "temporal-clone",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Carry TC39 Temporal values across structured-clone boundaries without data loss.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint . --max-warnings 0 && prettier --check .",
+    "test": "vitest run",
+    "test:browser": "npm run build:conformance && playwright test",
+    "build:conformance": "node conformance/build.mjs",
+    "conformance": "npm run build:conformance && node conformance/dist/node/run-node.js && node conformance/dist/node/run-browsers.js",
+    "conformance:report": "npm run build:conformance && node conformance/dist/node/report.js",
+    "conformance:check": "npm run build:conformance && node conformance/dist/node/check.js",
+    "conformance:baseline": "npm run build:conformance && node conformance/dist/node/baseline.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@js-temporal/polyfill": "0.5.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.4",
+    "esbuild": "0.28.2",
+    "eslint": "10.11.0",
+    "fast-check": "4.10.2",
+    "prettier": "3.9.8",
+    "temporal-polyfill": "1.0.5",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.70.0",
+    "vitest": "5.0.1"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}
